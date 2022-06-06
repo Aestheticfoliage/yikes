@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Hospitably suites",
+        "type": "hotel",
+        "user": "manager",
+        "location": "New York",
+        "date joined": "01/01/2019",
+        "email": "manager@hospitablysuites.com",
+        "total_reviews": "0",
+        }
+    ]
