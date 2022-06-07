@@ -3,9 +3,21 @@
         "name": "Hospitably suites",
         "type": "hotel",
         "user": "manager",
-        "location": "New York",
-        "date joined": "01/01/2019",
+        "city": "New York city",
+        "state": "New York",
+        "date_joined": "01/01/2019",
         "email": "manager@hospitablysuites.com",
         "total_reviews": "0",
+        },
+        {
+        "name": "Better Burgers",
+        "type": "restaurant",
+        "user": "server",
+        "city": "Boise",
+        "state": "Idaho",
+        "date joined": "01/01/2019",
+        "email": "ihavealotofnicethingstosay@hotmail.com",
+        "total_reviews": "7",
+
         }
     ]
