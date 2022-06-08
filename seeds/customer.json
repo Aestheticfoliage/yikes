@@ -1,37 +1,16 @@
 [
     {
         "name": "john doe",
-        "address": "123 main st",
-        "city": "boston",
-        "state": "MA",
-        "zip": "02111",
-        "phone": "123-456-7890",
-        "email": "wedonttip@joepublic.com",
         "review": "",
         "rating": "doesn't tip",
-        "date": "12/12/12",
-        "time": "12:00am",""
-        "service": "drinks",
-        "price": "$$$",
+        
 
 
 
         },
         {
         "name": "jane doe",
-        "address": "456 main st",
-        "city": "new york",
-        "state": "NY",
-        "zip": "02111",
-        "phone": "123-456-7890",
-        "email": "imagreatcustomer@aol.com",
         "review": "please come again",
         "rating": "a plus",
-        "date": "10/10/2019",
-        "time": "7:00pm",
-        "service": "dinners",
-        "price": "$$",
-
-                    
     }
 ]
