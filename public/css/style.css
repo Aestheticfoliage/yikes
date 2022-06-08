@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar {
+    font-size: 25px;
+    color: blue;
+}
+
+#hero-title {
+    color: rgb(255, 187, 0);
+    font-size: 75px;
+}
+
+#hero-subtitle {
+    color: darkgoldenrod;
+    font-size: 35px;
+}
+
+#app-info {
+    margin-top: 20px;
+    max-width: fit-content;
+}
+
+#cards-container {
+    margin: 20px;
+}
+
+#app-info {
+    margin: 20px;
+}
+
