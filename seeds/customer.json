@@ -1,16 +1,13 @@
 [
     {
         "name": "john doe",
-        "review": "",
-        "rating": "doesn't tip",
+        "review": "this customer is not a great customer",
+        "rating": "doesn't tip"
         
-
-
-
         },
         {
         "name": "jane doe",
         "review": "please come again",
-        "rating": "a plus",
-    }
+        "rating": "a plus"
+        }
 ]
