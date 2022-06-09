@@ -1,7 +1,8 @@
-const customer = ({ Model, DataTypes } = require("../models/user"));
+const { Model, DataTypes } = require("sequelize");
+const customer = require("../models/user"));
 const sequelize = require("../config/connection");
 
-class customer extends Model {}
+class Customer extends Model {}
 
 customer.init(
   {
@@ -15,28 +16,6 @@ customer.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // address: {
-    //     type: DataTypes.STRING,
-    // },
-    // city: {
-    //     type: DataTypes.STRING,
-    // },
-    // state: {
-    //     type: DataTypes.STRING,
-    // },
-    // zip: {
-    //     type: DataTypes.INTEGER,
-    // },
-    // phone: {
-    //     type: DataTypes.INTEGER,
-    // },
-    // email: {
-    //     type: DataTypes.INTEGER,
-    // },
-    // date: {
-    //     type: DataTypes.DATE,
-    //     allowNull: false,
-    // },
     customer_review: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -48,14 +27,6 @@ customer.init(
         key: "id",
       },
     },
-    // service: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
-    // price: {
-    //     type: DataTypes.STRING
-    //     allowNull: false,
-    // },
   },
   {
     sequelize,
