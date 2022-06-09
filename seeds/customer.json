@@ -4,13 +4,10 @@
         "review": "this customer is not a great customer",
         "rating": "doesn't tip"
         
-
-
-
         },
         {
         "name": "jane doe",
         "review": "please come again",
         "rating": "a plus"
-    }
+        }
 ]
