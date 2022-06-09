@@ -3,9 +3,9 @@ const bcrypt = require("bcrypt");
 const { Module, DataTypes } = require(sequelize);
 class User extends Model{}
 
-User.init(
-    {
-        id: {
+User.init({
+    
+    id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
@@ -28,7 +28,7 @@ User.init(
     state: {
         type: DataTypes.STRING,
     },
-    Country: {
+    country: {
         type: DataTypes.STRING,
     },
     zip: {
