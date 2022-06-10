@@ -10,91 +10,69 @@
     <title>Yikes!!</title>
 </head>
 <body>
-    <section class="hero is-primary is-small">
-        <!-- Hero head: will stick at the top -->
-        <div class="hero-head">
-          <nav class="navbar">
-            <div class="container">
-              <div id="navbarMenuHeroA" class="navbar-menu">
-                <div class="navbar-end">
-                  <a href="/mainpage" class="navbar-item is-active">
-                    Home
-                  </a>
-                  <a href="/login" class="navbar-item">
-                    Login
-                  </a>
-                  <a href="/signup" class="navbar-item">
-                    Signup
-                  </a>
-                </div>
+  <section class="hero is-primary is-small">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end" id="navbar">
+              <a href="/mainpage" class="navbar-item">
+                Home
+              </a>
+              <a href="/login" class="navbar-item">
+                Login
+              </a>
+              <a href="/signup" class="navbar-item">
+                Signup
+              </a>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
+      </div>
       
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <p class="title" id="hero-title">
-              Yikes!!
-            </p>
-            <p class="subtitle" id="hero-subtitle">
-              The app for businesses to rate their clients!
-            </p>
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title" id="hero-title">
+            Yikes!!
+          </p>
+          <p class="subtitle" id="hero-subtitle">
+            The app for businesses to rate their clients!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="container">
+    <section class="row">
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
+        <div class="card text-center" id="demo-card">
+          <div class="card-header">
+            <h4>Taco Palace</h4>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">John Doe</h5>
+            <h5 class="card-subtitle">Phone, email</h5>
+            <p class="card-text">Excellent person, very understanding. Good tipper. Loves gin martini.</p>
+            <a href="#" class="btn btn-primary">5-Stars</a>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
           </div>
         </div>
+      </div> 
     </section>
-    <main class="container">
-        <section class="row">
-            <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                  </div>
-                </div>
-            </div> 
-        </section>
-        <section class="container" id="app-info">
-            <section class="row">
-                <article class="message is-primary">
-                    <div class="message-body">
-                        This web application is a tool for hospitality/service industry businesses have a portal where they can rate the clients. The user will be required to sign up/login in order to use the app. Once they are logged in the user(business) can create/submit a client review for a specific guest and post to the app. The user can also search for a client name and see if this person has gotten reviews from other establishments and what those reviews look like. The user will also be able to create, update, read and delete client reviews they write. The purpose is to create a tool that can help the user better identify their guest/client and provide a better service(or deny such). 
-                    </div>
-                  </article>
-            </section>
-        </section>
-    </main>
+    <section class="container" id="app-info">
+      <section class="row">
+        <article class="message is-primary">
+          <div class="message-body">
+            This web application is a tool for hospitality/service industry businesses have a portal where they can rate the clients. The user will be required to sign up/login in order to use the app. Once they are logged in the user(business) can create/submit a client review for a specific guest and post to the app. The user can also search for a client name and see if this person has gotten reviews from other establishments and what those reviews look like. The user will also be able to create, update, read and delete client reviews they write. The purpose is to create a tool that can help the user better identify their guest/client and provide a better service(or deny such). 
+          </div>
+      </article>
+    </section>
+  </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </html>
