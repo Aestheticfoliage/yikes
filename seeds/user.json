@@ -1,27 +1,32 @@
 [
     {
+        "id": "1",
         "name": "Hospitably suites",
         "type": "hotel",
-        "user": "manager",
+        "user_type": "manager",
         "city": "New York city",
         "state": "New York",
         "country": "USA",
         "zip": "10001",
-        "date_created": "01/01/2019",
+        "date_created": "2020-01-01",  
         "email": "manager@hospitablysuites.com",
+        "customer_review": "Positive",
+        "customer_rating": "5",
         "total_reviews": "0"
         },
         {
+        "id": "2",
         "name": "Better Burgers",
         "type": "restaurant",
-        "user": "server",
+        "user_type": "server",
         "city": "Boise",
         "state": "Idaho",
         "country": "USA",
         "zip": "83702",
         "date_created": "01/01/2019",
         "email": "ihavealotofnicethingstosay@hotmail.com",
-        "reviews": "this is a review",
+        "customer_review": "Negative",
+        "customer_rating": "1",
         "total_reviews": "0"
         }
         
