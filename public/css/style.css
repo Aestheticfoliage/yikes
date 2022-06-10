@@ -32,3 +32,12 @@
     margin: 20px;
 }
 
+#demo-card {
+    padding: 0;
+}
+
+#search-bar {
+    margin-left: 38%;
+    margin-top: 30px;
+}
+
