@@ -34,7 +34,7 @@ const loginFormHandler = async (event) => {
     if (password !== confirmPassword) {
         window.prompt("Passwords do not match");
     }
-    else (name && email && password && business) {
+    else if (name && email && password && business) {
       const response = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({ name, email, business, password }),
