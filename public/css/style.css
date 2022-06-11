@@ -12,11 +12,12 @@
 #hero-title {
     color: rgb(255, 187, 0);
     font-size: 75px;
+    font-family: 'Henny Penny', cursive;
 }
 
 #hero-subtitle {
     color: darkgoldenrod;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 #app-info {
