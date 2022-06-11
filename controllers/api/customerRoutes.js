@@ -17,14 +17,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
-    const postData = await Post.findAll({
-        include: [{ model: Customer,
-        attributes: ['name', 'id', 'customer_review', 'customer_rating']
-    },
-    ],
-  })
-});
+
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
