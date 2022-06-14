@@ -18,7 +18,7 @@
 
 ## Installation
 
-    -this
+    -This website is being hosted
 
 ## Possible future development integrations
 

@@ -1,14 +1,16 @@
 [
     {
         "id": "1",
-        "name": "john doe",
+        "first_name": "john",
+        "last_name": "doe",
         "review": "this customer is not a great customer",
-        "rating": "doesn't tip"
+        "rating": "1"
     },
         {
         "id": "2",
-        "name": "jane doe",
+        "first_name": "jane",
+        "last_name": "doe",
         "review": "please come again",
-        "rating": "a plus"
+        "rating": "5"
         }
 ]
