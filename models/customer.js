@@ -12,28 +12,30 @@ Customer.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    customer_review: {
+    last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    customer_rating: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "customer",
-        key: "id",
-      },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-  },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: true
+
+    },
+x  },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "customer",
+    modelName: 'customer',
   }
 );
 

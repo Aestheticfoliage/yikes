@@ -18,29 +18,13 @@ User.init({
             allowNull: false,
             autoIncrement: true
     },
-    name: {
+    userName: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    type: {
+    business_name: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    user_type: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    city: {
-        type: DataTypes.STRING,
-    },
-    state: {
-        type: DataTypes.STRING,
-    },
-    country: {
-        type: DataTypes.STRING,
-    },
-    zip: {
-        type: DataTypes.INTEGER,
     },
     email: {
         type: DataTypes.STRING,
@@ -53,34 +37,6 @@ User.init({
             len: [10],
         },
     },
-
-date_created: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
-},
-customer_review: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    references: {
-        model: 'customer',
-        key: 'id',
-    },
-},
-customer_rating: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-        model: 'customer',
-        key: 'id',
-    },
-},
-
-total_reviews: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    },
-},
 {
     hooks: {
         beforeCreate: async (newuserData) => {

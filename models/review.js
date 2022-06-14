@@ -13,7 +13,7 @@ Review.init(
       autoIncrement: true,
     },
 
-    name: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
       references: {
@@ -21,22 +21,24 @@ Review.init(
         key: 'id',
       },
     },
-
-    customer: {
+    last_name: {
       type: DataTypes.STRING,
+      allowNull: false,
       references: {
         model: 'customer',
         key: 'id',
       },
-    },
 
-    rating: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'customer',
-        key: 'id',
-      },
+    customer_review: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
+    customer_rating: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  },
+
   },
   {
     sequelize,
