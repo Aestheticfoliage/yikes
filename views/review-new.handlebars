@@ -39,18 +39,21 @@
               
         <div class="field">
             <label class="label">Rating</label>
-            <div class="control">
-                <div class="select">
-                    <select>
-                        <option>Select rating</option>
-                        <option>1 star</option>
-                        <option>2 stars</option>
-                        <option>3 stars</option>
-                        <option>4 stars</option>
-                        <option>5 stars</option>
-                    </select>
-                </div>
-            </div>
+            <div class="control" id="container">
+                  <div class="container" id="container">
+                    <div class="star-widget">
+                      <input type="radio" name="rate" id="rate-5">
+                      <label for="rate-5" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-4">
+                      <label for="rate-4" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-3">
+                      <label for="rate-3" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-2">
+                      <label for="rate-2" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-1">
+                      <label for="rate-1" class="fas fa-star"></label>
+                    </div>
+                  </div>
         </div>
               
         <div class="field">
@@ -69,3 +72,4 @@
             </div>
         </div>
 </section>
+<script src="./js/rating.js"></script>
