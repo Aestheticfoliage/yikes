@@ -10,9 +10,8 @@
 
 ## User Story
 
--As a user i want to go to a landing page that shows reviews as they are submitted, not including any specifics just a review
-
--As a user i am then directed to a login page where i am prompted to build a profile and verify that i am a representative of a legitimate business. Also, there is a terms of service requirement that must be agreed to.
+-I want to be able to post reviews about my customers
+-I want to be able to create a profile that lets me edit reviews and also view reviews submitted.
 
 -After login requirements are satisfied i am directed to my profile page where i can search customers based on either email, phone number or name. If no search results are returned user is directed to create a new review.
 
@@ -30,12 +29,3 @@
 
 ## Programs used in this application
 
--[heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
-
--[mysql](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-
--[bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-
--[vscode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
-
--
