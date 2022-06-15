@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const Review = require('../models/review');
 const sequelize = require('../config/connection');
 
 class Review extends Model {}
@@ -13,22 +12,22 @@ Review.init(
       autoIncrement: true,
     },
 
-    first_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: 'customer',
-        key: 'id',
-      },
-    },
-    last_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: 'customer',
-        key: 'id',
-      },
-
+    // first_name: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'customer',
+    //     key: 'id',
+    //   },
+    // },
+    // last_name: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'customer',
+    //     key: 'id',
+    //   },
+    // },
     customer_review: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -39,7 +38,6 @@ Review.init(
     },
   },
 
-  },
   {
     sequelize,
     timestamps: false,
