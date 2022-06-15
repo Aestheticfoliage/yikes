@@ -1,10 +1,33 @@
 {
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "express-sessions": "^1.0.6",
     "heroku": "^7.60.2",
     "mysql2": "^2.3.3",
+    "seed": "^0.4.4",
     "sequelize": "^6.20.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "yikes",
+  "description": "-A review site to allow businesses to rate the customer",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aestheticfoliage/yikes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aestheticfoliage/yikes/issues"
+  },
+  "homepage": "https://github.com/Aestheticfoliage/yikes#readme"
 }

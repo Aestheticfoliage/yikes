@@ -15,13 +15,13 @@
       <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
         <div class="card text-center" id="demo-card">
           <div class="card-header">
-            <h4>{{user.businessName}}</h4>
+            <h4>{{user.business_name}}</h4>
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{customer.name}}</h5>
-            <h5 class="card-subtitle">{{customer.phone_number customer.email}}</h5>
-            <p class="card-text">{{customer.customer_review}}</p>
-            <a href="#" class="btn btn-primary">5-Stars</a>
+            <h5 class="card-title">{{customer.first_name.last_name}}</h5>
+            <h5 class="card-subtitle">{{customer.phone customer.email}}</h5>
+            <p class="card-text">{{review.customer_review}}</p>
+            <p class="rating">{{review.customer_rating}}</p>
           </div>
           <div class="card-footer text-muted">
             {{format_date createdAt}}
