@@ -29,7 +29,7 @@ Customer.init(
       allowNull: true
 
     },
-x  },
+  },
   {
     sequelize,
     timestamps: false,
