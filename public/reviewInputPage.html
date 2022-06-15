@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Write Review | Yikes!!</title>
@@ -45,7 +46,7 @@
           </div>
         </div>
     </section>
-    <main class="container">
+    <main class="container" id="info_block">
         <section class="row">
             <div class="field">
                 <label class="label">Guest Name</label>
@@ -87,8 +88,23 @@
               
               <div class="field">
                 <label class="label">Rating</label>
-                <div class="control">
-                  <div class="select">
+                <div class="control" id="container">
+                  <div class="container" id="container">
+                    <div class="star-widget">
+                      <input type="radio" name="rate" id="rate-5">
+                      <label for="rate-5" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-4">
+                      <label for="rate-4" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-3">
+                      <label for="rate-3" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-2">
+                      <label for="rate-2" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-1">
+                      <label for="rate-1" class="fas fa-star"></label>
+                    </div>
+                  </div>
+                  <script src="./js/rating.js"></script>
+                  <!-- <div class="select">
                     <select>
                       <option>Select rating</option>
                       <option>1 star</option>
@@ -97,7 +113,7 @@
                       <option>4 stars</option>
                       <option>5 stars</option>
                     </select>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               
