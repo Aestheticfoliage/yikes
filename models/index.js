@@ -12,7 +12,11 @@ User.hasMany(Customer, {
 // });
 
 Customer.hasMany(Review, {
-  primaryKey: "review_id",
+  foreignKey: "review_id",
 });
+
+Review.belongsTo(Customer, {
+  foreignKey: "customer_id"
+})
 
 module.exports = { User, Customer, Review };
