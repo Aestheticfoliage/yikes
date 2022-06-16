@@ -13,10 +13,10 @@ class User extends Model {
 User.init({
     
     id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        autoIncrement: true
     },
     userName: {
         type: DataTypes.STRING,
@@ -29,6 +29,10 @@ User.init({
     email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true,
+        },
     },
     password: {
         type: DataTypes.STRING,
@@ -53,6 +57,7 @@ User.init({
         },    
         sequelize,
         timestamps: false,
+        constraint: 'user_id',
         freezeTableName: true,
         underscored: true,
         modelName: 'User',
