@@ -3,8 +3,8 @@ const Customer = require('./customer');
 const Review = require('./review');
 
 User.hasMany(Customer, {
-  foreignKey: "customer_id",
-  onDelete: "cascade",
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 
 // User.belongsTo(User, {
@@ -12,11 +12,18 @@ User.hasMany(Customer, {
 // });
 
 Customer.hasMany(Review, {
-  foreignKey: "review_id",
+  foreignKey: 'customer_id',
+  onDelete: 'CASCADE',
 });
 
 Review.belongsTo(Customer, {
-  foreignKey: "customer_id"
-})
+  foreignKey: 'customer_id',
+  onDelete: 'CASCADE',
+});
+
+Customer.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
 
 module.exports = { User, Customer, Review };
