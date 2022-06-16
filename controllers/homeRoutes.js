@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Customer,
-          attributes: ['customer_name'],
+          attributes: ['first_name'],
         },
       ],
     });
@@ -32,18 +32,18 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/review/:id', async (req, res) => {
+router.get('/review/:id', async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id, {
       include: [
         {
           model: Customer,
-          attributes: ['customer_name'],
+          attributes: ['first_name'],
         },
       ],
     });
 
-    const project = reviewData.get({ plain: true });
+    const reviews = reviewData.get({ plain: true });
 
     res.render('reviews', {
       ...reviews,

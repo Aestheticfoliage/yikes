@@ -33,7 +33,7 @@ Review.init(
       allowNull: false,
     },
     customer_rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     dateCreated: {
