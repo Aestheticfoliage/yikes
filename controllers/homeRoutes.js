@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
   try {
     // Get all reviews and JOIN with user data
     const reviewData = await Review.findAll({
+<<<<<<< HEAD
       include: [
         {
           model: Customer,
@@ -23,6 +24,9 @@ router.get('/', async (req, res) => {
           model: Review,
         },
       ],
+=======
+      include: [Customer]
+>>>>>>> 9f6204172eb5941423a61501c9f4c5a883af55d3
     });
     const customer = customerData.map((customer) =>
     customer.get({ plain: true })
@@ -50,11 +54,11 @@ router.get('/', async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id, {
       include: [
-        {
-          model: Customer,
-          attributes: ['first_name'],
-        },
-      ],
+        Customer,
+      {
+        model: Review,
+        include: [User],
+      }],
     });
 
     const reviews = reviewData.get({ plain: true });
@@ -79,7 +83,7 @@ router.get('/user', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('review-new', {
       ...user,
       logged_in: true
     });
@@ -91,11 +95,20 @@ router.get('/user', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/reviews-all');
     return;
   }
 
   res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('signup');
 });
 
 module.exports = router;
