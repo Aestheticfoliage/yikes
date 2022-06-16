@@ -6,9 +6,31 @@ router.get('/', async (req, res) => {
   try {
     // Get all reviews and JOIN with user data
     const reviewData = await Review.findAll({
-      include: [Customer]
+<<<<<<< HEAD
+      include: [
+        {
+          model: Customer,
+          
+        },
+        {
+          model: User,
+          attributes: { exclude: ['password'] },
+        }
+      ],
     });
-
+    const customerData = await Customer.findByPk(req.params.id, {
+      include: [
+        {
+          model: Review,
+        },
+      ],
+=======
+      include: [Customer]
+>>>>>>> 9f6204172eb5941423a61501c9f4c5a883af55d3
+    });
+    const customer = customerData.map((customer) =>
+    customer.get({ plain: true })
+  );
     // Serialize data so the template can read it
     const tempReviews = reviewData.map((reviews) => reviews.get({ plain: true }));
      let reviews = [];
@@ -19,7 +41,8 @@ router.get('/', async (req, res) => {
      }
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      reviews, 
+      reviews,
+      customer, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -27,7 +50,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/review/:id', async (req, res) => {
+/* router.get('/review/:id', async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id, {
       include: [
@@ -48,7 +71,7 @@ router.get('/review/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+*/
 // Use withAuth middleware to prevent access to route
 router.get('/user', withAuth, async (req, res) => {
   try {
