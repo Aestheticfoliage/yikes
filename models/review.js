@@ -12,22 +12,23 @@ Review.init(
       autoIncrement: true,
     },
 
-    // first_name: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'customer',
-    //     key: 'id',
-    //   },
-    // },
-    // last_name: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'customer',
-    //     key: 'id',
-    //   },
-    // },
+      name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: 'customer',
+        key: 'id',
+      },
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: true
+
+    },
     customer_review: {
       type: DataTypes.STRING,
       allowNull: false,
