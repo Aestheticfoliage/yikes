@@ -2,53 +2,56 @@ const router = require('express').Router();
 const { Review, User, Customer} = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
-  try {
-    // Get all reviews and JOIN with user data
-    const reviewData = await Review.findAll({
-<<<<<<< HEAD
-      include: [
-        {
-          model: Customer,
-          
-        },
-        {
-          model: User,
-          attributes: { exclude: ['password'] },
-        }
-      ],
-    });
-    const customerData = await Customer.findByPk(req.params.id, {
-      include: [
-        {
-          model: Review,
-        },
-      ],
-=======
-      include: [Customer]
->>>>>>> 9f6204172eb5941423a61501c9f4c5a883af55d3
-    });
-    const customer = customerData.map((customer) =>
-    customer.get({ plain: true })
-  );
-    // Serialize data so the template can read it
-    const tempReviews = reviewData.map((reviews) => reviews.get({ plain: true }));
-     let reviews = [];
-     for (let i = 0; i < 10; i++) {
-      reviews[i] = tempReviews[Math.floor(Math.random() * tempReviews.length)];
-
-      Console.log('Pushing');
-     }
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      reviews,
-      customer, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+router.get('/', async (req,res)=>{
+  const customersData = await Customer.findAll();
+  const customers = customersData.map(customer=> customer.get({plain:true}))
+  res.render('homepage', {customers})
 });
+
+// router.get('/', async (req, res) => {
+//   try {
+//     // Get all reviews and JOIN with user data
+//     const reviewData = await Review.findAll(
+//       //{
+//       // include: [
+//       //   {
+//       //     model: Customer,
+          
+//       //   },
+//       //   {
+//       //     model: User,
+//       //     attributes: { exclude: ['password'] },
+//       //   }
+//       // ],
+//     //}
+//     );
+//     const customerData = await Customer.findByPk(req.params.id, 
+//       //{
+//       // include: [
+//       //   {
+//       //     model: Review,
+//       //   },
+//       // ],
+//     //}
+//     );
+//     const customer = customerData.map((customer) => customer.get({ plain: true })
+//   );
+//     // Serialize data so the template can read it
+//     const tempReviews = reviewData.map((reviews) => reviews.get({ plain: true }));
+//      let reviews = [];
+//      for (let i = 0; i < 10; i++) {
+//       reviews[i] = tempReviews[Math.floor(Math.random() * tempReviews.length)];
+
+//       Console.log('Pushing');
+//      }
+//     // Pass serialized data and session flag into template
+//     res.render('homepage', { 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 /* router.get('/review/:id', async (req, res) => {
   try {
