@@ -53,17 +53,18 @@
     <section class="row">
       {{{ body }}}
     </section> --}}
-    {{!-- <section class="container" id="app-info">
+    {{#each reviews}}
+    this is one customer
+    {{/each}}
+    <section class="container" id="app-info">
       <section class="row">
         <article class="message is-primary">
           <div class="message-body">
             This web application is a tool for hospitality/service industry businesses have a portal where they can rate the clients. The user will be required to sign up/login in order to use the app. Once they are logged in the user(business) can create/submit a client review for a specific guest and post to the app. The user can also search for a client name and see if this person has gotten reviews from other establishments and what those reviews look like. The user will also be able to create, update, read and delete client reviews they write. The purpose is to create a tool that can help the user better identify their guest/client and provide a better service(or deny such). 
           </div>
       </article>
-    </section> --}}
-    {{#each customers}}
-    this is one customer
-    {{/each}}
+    </section>
+    
   {{!-- </main> --}}
   {{!-- {{#if logged_in}}
   <script src="../../public/js/logout.js"></script>
