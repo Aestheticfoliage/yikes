@@ -9,7 +9,7 @@ router.post('/', withAuth, async (req, res) => {
       userId: req.session.user_id,
     });
 
-    console.log('newReview', newReview);
+    console.log('newPost', newReview);
 
     res.status(200).json(newReview);
   } catch (err) {
@@ -29,7 +29,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!Review) {
-      res.status(404).json({ message: 'No review found with this id!' });
+      res.status(404).json({ message: 'No reviews found with this id!' });
       return;
     }
 
