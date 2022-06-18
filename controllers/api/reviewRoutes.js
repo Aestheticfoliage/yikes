@@ -29,7 +29,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!Review) {
-      res.status(404).json({ message: 'No review found with this id!' });
+      res.status(404).json({ message: 'No reviews found with this id!' });
       return;
     }
 
