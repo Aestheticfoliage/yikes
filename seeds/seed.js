@@ -1,8 +1,8 @@
 const sequelize = require("../config/connection");
-const { User, Customer, Review } = require("../models");
+const { User, Review } = require("../models");
 
 const userData = require("./user.json");
-const customerData = require("./customer.json");
+//const customerData = require("./customer.json");
 const reviewData = require("./review.json");
 
 const seedDatabase = async () => {
@@ -13,13 +13,13 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const customer of customerData) {
+/*  for (const customer of customerData) {
     await Customer.create({
       ...customer,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
-
+*/
   for(const review of reviewData) {
     await Review.create({
       ...review,
