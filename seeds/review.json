@@ -1,7 +1,11 @@
 [
     {
-        "customer_id": "1",
-        "customer_review": "excellent guest. very understanding.",
-        "customer_rating": "5 stars"
+        "id": "1",
+        "name": "John Denver",
+        "email": "JDenver@hotmail.com",
+        "phone": "999-669-6969",
+        "review": "excellent guest. very understanding.",
+        "rating": "5 stars"
+
     }
 ]

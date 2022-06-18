@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Review, User, Customer} = require('../models');
+const { Review, User} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req,res)=>{
-  const customersData = await Customer.findAll();
-  const customers = customersData.map(customer=> customer.get({plain:true}))
-  res.render('homepage', {customers})
+  const reviewData = await Review.findAll();
+  const reviews = reviewData.map(review=> review.get({plain:true}))
+  res.render('homepage', {reviews})
 });
 
 // router.get('/', async (req, res) => {

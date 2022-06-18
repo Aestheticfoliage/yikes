@@ -15,10 +15,6 @@ Review.init(
       name: {
       type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'customer',
-        key: 'id',
-      },
     },
     email: {
       type: DataTypes.STRING,
@@ -29,11 +25,11 @@ Review.init(
       allowNull: true
 
     },
-    customer_review: {
+    review: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    customer_rating: {
+    rating: {
       type: DataTypes.STRING,
       allowNull: false,
     },
