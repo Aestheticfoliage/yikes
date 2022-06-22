@@ -14,6 +14,14 @@ router.get('/reviews-all', async (req,res)=>{
   res.render('reviews-all', { reviews, loggedIn: req.session.loggedIn});
 });
 
+router.get('/review-new', async (req,res)=>{
+  const reviewNewData = await Review.findAll();
+  const reviews = reviewNewData.map(review=> review.get({plain:true}))
+  res.render('review-new', { reviews, loggedIn: req.session.loggedIn});
+});
+
+
+
 // router.get('/', async (req, res) => {
 //   try {
 //     // Get all reviews and JOIN with user data
@@ -128,6 +136,16 @@ router.get('/home', (req, res) => {
   }
 
   res.render('homepage');
+});
+
+router.get('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;

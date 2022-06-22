@@ -50,7 +50,7 @@ const loginFormHandler = async (event) => {
   // };
   
   document
-    .querySelector('.login100-form-btn')
+    .querySelector('.login100-form')
     .addEventListener('submit', loginFormHandler);
   
   // document
