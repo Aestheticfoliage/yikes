@@ -15,44 +15,44 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace('/reviewPage');
+        document.location.replace('/reviews-all');
       } else {
         alert(response.statusText);
       }
     }
   };
   
-  const signupFormHandler = async (event) => {
-    event.preventDefault();
+  // const signupFormHandler = async (event) => {
+  //   event.preventDefault();
   
-    const name = document.querySelector('#name-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const business = document.querySelector('#businessName-signup').value.trim();
-    const password = document.querySelector('#password-Signup').value.trim();
-    const confirmPassword = document.querySelector('#confirmEmail-signup').value.trim();
+  //   const name = document.querySelector('#name-signup').value.trim();
+  //   const email = document.querySelector('#email-signup').value.trim();
+  //   const business = document.querySelector('#businessName-signup').value.trim();
+  //   const password = document.querySelector('#password-Signup').value.trim();
+  //   const confirmPassword = document.querySelector('#confirmEmail-signup').value.trim();
     
-    if (password !== confirmPassword) {
-        window.prompt("Passwords do not match");
-    }
-    else if (name && email && password && business) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, business, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+  //   if (password !== confirmPassword) {
+  //       window.prompt("Passwords do not match");
+  //   }
+  //   else if (name && email && password && business) {
+  //     const response = await fetch('/api/users', {
+  //       method: 'POST',
+  //       body: JSON.stringify({ name, email, business, password }),
+  //       headers: { 'Content-Type': 'application/json' },
+  //     });
   
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  };
+  //     if (response.ok) {
+  //       document.location.replace('/reviews-all');
+  //     } else {
+  //       alert(response.statusText);
+  //     }
+  //   }
+  // };
   
   document
-    .querySelector('.login-form')
+    .querySelector('.login100-form-btn')
     .addEventListener('submit', loginFormHandler);
   
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+  // document
+  //   .querySelector('.login100-form-btn')
+  //   .addEventListener('submit', signupFormHandler);

@@ -8,6 +8,12 @@ router.get('/', async (req,res)=>{
   res.render('homepage', {reviews})
 });
 
+router.get('/reviews-all', async (req,res)=>{
+  const reviewData = await Review.findAll();
+  const reviews = reviewData.map(review=> review.get({plain:true}))
+  res.render('reviews-all', { reviews, loggedIn: req.session.loggedIn});
+});
+
 // router.get('/', async (req, res) => {
 //   try {
 //     // Get all reviews and JOIN with user data
@@ -107,7 +113,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/login');
+    res.redirect('/reviews-all');
     return;
   }
 
