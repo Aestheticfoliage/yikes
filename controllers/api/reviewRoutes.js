@@ -39,4 +39,22 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.get('/search', withAuth, async (req, res) => {
+  try {
+    console.log("Reviews");
+    const reviewData = await Review.findAll({
+      include: [
+        {
+          model: User,
+        },
+      ],
+      where: { user_id: req.session.user_id },
+    });
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
+    res.render('search', { reviews });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
