@@ -11,7 +11,7 @@ const signupClickHandler = async (event) => {
       window.alert("Passwords do not match");
   }
   else if (userName && email && password && business_name) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/users/new', {
       method: 'POST',
       body: JSON.stringify({ userName, email, business_name, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -25,6 +25,4 @@ const signupClickHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.login100-form')
-  .addEventListener('submit', signupClickHandler);
+document.querySelector('.login100-form').addEventListener('submit', signupClickHandler);
