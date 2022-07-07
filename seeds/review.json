@@ -69,5 +69,21 @@
         "phone": "951-602-5169",
         "review": "Dined and dashed.",
         "rating": "0 stars"
+    },
+    {
+        "id": "9",
+        "name": "Zack Richards",
+        "email": "richardsZack@gmail.com",
+        "phone": "951-602-5169",
+        "review": "Dined and dashed.",
+        "rating": "0 stars"
+    },
+    {
+        "id": "10",
+        "name": "Zack Richards",
+        "email": "richardsZack@gmail.com",
+        "phone": "951-602-5169",
+        "review": "Dined and dashed.",
+        "rating": "0 stars"
     }
 ]

@@ -39,18 +39,21 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/search', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
+  // accepting username through req.body
+  // get user from reviews by customer.name
   try {
-    console.log("Reviews");
     const reviewData = await Review.findAll({
-      include: [
-        {
-          model: User,
-        },
-      ],
-      where: { user_id: req.session.user_id },
+      // include: [
+      //   {
+      //     model: User,
+      //   },
+      // ],
+      where: { name: req.body.name },
     });
     const reviews = reviewData.map((review) => review.get({ plain: true }));
+    res.send(reviews)
+    // Rendering the handlebar page
     res.render('search', { reviews });
   } catch (err) {
     console.log(err);

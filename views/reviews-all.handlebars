@@ -3,17 +3,16 @@
       <section id="search-bar-container">
         <h2 class="fs-2">Search for a guest:</h2>
           <form id="search-form">
-            <input type="text" action="/search" placeholder="Enter Name..." id="search-input" class="col-12 form-control">
+            <input type="text" placeholder="Enter Name..." id="search-input" class="col-12 form-control">
               <button class="btn btn-primary col-12">Search</button>
           </form>
       </section>
       <section id="button-container"></section>
     </aside>
-  </section>
-<main class="container">
-   {{#each review as |review|}}
+ 
+   <main class="container">
     <section class="row">
-     
+      {{#each review as |review|}}
       <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
         <div class="card text-center" id="demo-card">
           <div class="card-header">
@@ -26,9 +25,8 @@
             <p class="rating">{{review.rating}}</p>
           </div>
           <div class="card-footer text-muted">
-           
+            {{format_date createdAt}}
           </div>
-           {{format_date createdAt}}
         </div>
       </div> 
     </section>
