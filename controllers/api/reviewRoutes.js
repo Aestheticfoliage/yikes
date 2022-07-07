@@ -39,4 +39,25 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  // accepting username through req.body
+  // get user from reviews by customer.name
+  try {
+    const reviewData = await Review.findAll({
+      // include: [
+      //   {
+      //     model: User,
+      //   },
+      // ],
+      where: { name: req.body.name },
+    });
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
+    res.send(reviews)
+    // Rendering the handlebar page
+    res.render('search', { reviews });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
