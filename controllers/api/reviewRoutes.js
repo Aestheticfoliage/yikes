@@ -2,14 +2,14 @@ const router = require('express').Router();
 const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/all', withAuth, async (req, res) => {
   try {
-    const newReview = await Review.create({
+    const newReview = await Review.findAll({
       ...req.body,
       userId: req.session.user_id,
     });
 
-    console.log('newPost', newReview);
+    console.log(' New Review Posted', newReview);
 
     res.status(200).json(newReview);
   } catch (err) {
@@ -17,6 +17,20 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.post('/new', withAuth, async (req, res) => {
+  try {
+    const newReview = await Review.create({
+      ...req.body,
+      userId: req.session.user_id,
+    });
+
+    console.log(' New Review Posted', newReview);
+
+    res.status(200).json(newReview);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 
 router.delete('/:id', withAuth, async (req, res) => {
