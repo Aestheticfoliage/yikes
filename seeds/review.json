@@ -7,5 +7,83 @@
         "review": "excellent guest. very understanding.",
         "rating": "5 stars"
 
+    },
+    {
+        "id": "2",
+        "name": "Logan Gnome",
+        "email": "lgnome@hotmail.com",
+        "phone": "934-462-6541",
+        "review": "Got very drunk and started a bar fight.",
+        "rating": "1 stars"
+
+    },
+    {
+        "id": "3",
+        "name": "Clay Jones",
+        "email": "dirtjones@gmail.com",
+        "phone": "909-664-7154",
+        "review": "He tipped $50 for a $20 meal.",
+        "rating": "5 stars"
+
+    },
+    {
+        "id": "4",
+        "name": "John Denver",
+        "email": "JDenver@hotmail.com",
+        "phone": "999-669-6969",
+        "review": "excellent guest. very understanding.",
+        "rating": "5 stars"
+
+    },
+    {
+        "id": "5",
+        "name": "John Smarr",
+        "email": "krug1@hotmail.com",
+        "phone": "229-365-8953",
+        "review": "He broke the tv and a lamp.",
+        "rating": "0 stars"
+
+    },
+    {
+        "id": "6",
+        "name": "Emma Hall",
+        "email": "EmmaH@yahoo.com",
+        "phone": "568-663-3598",
+        "review": "excellent guest and even tipped the housekeeping.",
+        "rating": "5 stars"
+
+    },
+    {
+        "id": "7",
+        "name": "Kyle Jenkins",
+        "email": "kjenkins@hotmail.com",
+        "phone": "851-853-3602",
+        "review": "Ordered over $200 in foos and did not tip waiter.",
+        "rating": "3 stars"
+
+    },
+    {
+        "id": "8",
+        "name": "Zack Richards",
+        "email": "richardsZack@gmail.com",
+        "phone": "951-602-5169",
+        "review": "Dined and dashed.",
+        "rating": "0 stars"
+    },
+    {
+        "id": "9",
+        "name": "Zack Richards",
+        "email": "richardsZack@gmail.com",
+        "phone": "951-602-5169",
+        "review": "Dined and dashed.",
+        "rating": "0 stars"
+    },
+    {
+        "id": "10",
+        "name": "Zack Richards",
+        "email": "richardsZack@gmail.com",
+        "phone": "951-602-5169",
+        "review": "Dined and dashed.",
+        "rating": "0 stars"
     }
 ]
