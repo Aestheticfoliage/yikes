@@ -53,8 +53,24 @@
     <section class="row">
       {{{ body }}}
     </section> --}}
-    {{#each reviews}}
-    this is one customer
+    {{#each review as |review|}}
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
+        <div class="card text-center" id="demo-card">
+          <div class="card-header">
+            <h4>{{user.business_name}}</h4>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{review.name}}</h5>
+            <h5 class="card-subtitle">{{review.phone review.email}}</h5>
+            <p class="card-text">{{review.review}}</p>
+            <p class="rating">{{review.rating}}</p>
+          </div>
+          <div class="card-footer text-muted">
+            {{format_date createdAt}}
+          </div>
+        </div>
+      </div> 
+    </section>
     {{/each}}
     <section class="container" id="app-info">
       <section class="row">

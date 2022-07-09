@@ -1,32 +1,33 @@
 const router = require('express').Router();
-const { Review } = require('../../models');
+const { Review, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/all', withAuth, async (req, res) => {
   try {
-    const newReview = await Review.findAll({
-      ...req.body,
-      userId: req.session.user_id,
+    const reviewData = await Review.findAll({
+      include: [User],
     });
+    const review = reviewData.map((review) => review.get({ plain: true }));
 
-    console.log(' New Review Posted', newReview);
+    console.log(review);
 
-    res.status(200).json(newReview);
+    res.render('reviews-all', {review, loggedIn: req.session.loggedIn});
+
+    // res.status(200).json(reviewData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
 router.post('/new', withAuth, async (req, res) => {
+  const body = req.body;
+    console.log(body);
   try {
-    const newReview = await Review.create({
-      ...req.body,
-      userId: req.session.user_id,
-    });
+    const newReview = await Review.create({ ...body, userId: req.session.user_id });
 
     console.log(' New Review Posted', newReview);
 
-    res.status(200).json(newReview);
+    res.render('reviews-all', {newReview, loggedIn: req.session.loggedIn})
   } catch (err) {
     res.status(400).json(err);
   }
@@ -53,22 +54,28 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.put('/', async (req, res) => {
   // accepting username through req.body
   // get user from reviews by customer.name
   try {
+    console.log("name", req.body.name)
     const reviewData = await Review.findAll({
-      // include: [
-      //   {
-      //     model: User,
-      //   },
-      // ],
+      include: [
+        {
+          model: User,
+        },
+      ],
       where: { name: req.body.name },
     });
     const reviews = reviewData.map((review) => review.get({ plain: true }));
-    res.send(reviews)
+    console.log(reviews)
+    // res.json(reviews)
     // Rendering the handlebar page
-    res.render('search', { reviews });
+  //   const reviewData = await Review.findAll({include: [User]});
+  // const reviews = reviewData.map(review=> review.get({plain:true}))
+  console.log(reviews)
+  res.render('search', { reviews, loggedIn: req.session.logged_in});
+  
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

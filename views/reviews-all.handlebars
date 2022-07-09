@@ -2,9 +2,9 @@
     <aside>
       <section id="search-bar-container">
         <h2 class="fs-2">Search for a guest:</h2>
-          <form id="search-form">
+          <form class="form" id="search-form">
             <input type="text" placeholder="Enter Name..." id="search-input" class="col-12 form-control">
-              <button class="btn btn-primary col-12">Search</button>
+              <button class="btn btn-primary col-12 submit" type="submit">Search</button>
           </form>
       </section>
       <section id="button-container"></section>
@@ -12,24 +12,26 @@
  
    <main class="container">
     <section class="row">
-      {{#each review as |review|}}
+      {{#each reviews }}
       <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
         <div class="card text-center" id="demo-card">
           <div class="card-header">
-            <h4>{{user.business_name}}</h4>
+            <h4>{{user.userName}}</h4>
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{review.name}}</h5>
-            <h5 class="card-subtitle">{{review.phone review.email}}</h5>
-            <p class="card-text">{{review.review}}</p>
-            <p class="rating">{{review.rating}}</p>
+            <h5 class="card-title">{{name}}</h5>
+            <h5 class="card-subtitle">{{phone}} {{email}}</h5>
+            <p class="card-text">{{review}}</p>
+            <p class="rating">{{rating}}</p>
           </div>
           <div class="card-footer text-muted">
-            {{format_date createdAt}}
+            {{!-- {{format_date createdAt}} --}}
           </div>
         </div>
       </div> 
+      {{/each}}
     </section>
-    {{/each}}
+    
   </main>
 </section>
+<script src="./js/search.js"></script>

@@ -37,6 +37,10 @@ Review.init(
       type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   },
 

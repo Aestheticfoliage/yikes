@@ -25,8 +25,9 @@ router.get('/home', async (req,res)=>{
 // });
 
 router.get('/reviews-all', async (req,res)=>{
-  const reviewData = await Review.findAll();
+  const reviewData = await Review.findAll({include: [User]});
   const reviews = reviewData.map(review=> review.get({plain:true}))
+  console.log(reviews)
   res.render('reviews-all', { reviews, loggedIn: req.session.logged_in});
 });
 
