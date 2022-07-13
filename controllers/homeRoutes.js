@@ -26,9 +26,37 @@ router.get('/home', async (req,res)=>{
 
 router.get('/reviews-all', async (req,res)=>{
   const reviewData = await Review.findAll({include: [User]});
-  const reviews = reviewData.map(review=> review.get({plain:true}))
+  const reviews = reviewData.map(review => review.get({plain:true}))
   console.log(reviews)
   res.render('reviews-all', { reviews, loggedIn: req.session.logged_in});
+});
+
+router.get('/reviews/:guest', async (req, res) => {
+  // accepting username through req.body
+  // get user from reviews by customer.name
+  try {
+    // console.log("name", req.body.name)
+    const reviewData = await Review.findAll({
+      include: [
+        {
+          model: User,
+        },
+      ],
+      where: { name: req.params.guest },
+    });
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
+    console.log(reviews)
+    // res.json(reviews)
+    // Rendering the handlebar page
+  //   const reviewData = await Review.findAll({include: [User]});
+  // const reviews = reviewData.map(review=> review.get({plain:true}))
+  res.render('search', { reviews, loggedIn: req.session.logged_in});
+  // res.json(reviews)
+  
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get('/review-new', async (req,res)=>{

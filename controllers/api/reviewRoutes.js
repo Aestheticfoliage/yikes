@@ -73,8 +73,8 @@ router.put('/', async (req, res) => {
     // Rendering the handlebar page
   //   const reviewData = await Review.findAll({include: [User]});
   // const reviews = reviewData.map(review=> review.get({plain:true}))
-  console.log(reviews)
-  res.render('search', { reviews, loggedIn: req.session.logged_in});
+  // res.render('search', { reviews, loggedIn: req.session.logged_in});
+  res.json(reviews)
   
   } catch (err) {
     console.log(err);

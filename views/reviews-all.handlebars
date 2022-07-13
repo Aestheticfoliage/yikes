@@ -1,5 +1,5 @@
-<section class="col-sm-12 col-lg-3" id="search-bar">
-    <aside>
+<section id="search-bar">
+    <aside class="col-sm-12 col-lg-3">
       <section id="search-bar-container">
         <h2 class="fs-2">Search for a guest:</h2>
           <form class="form" id="search-form">
@@ -16,11 +16,11 @@
       <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
         <div class="card text-center" id="demo-card">
           <div class="card-header">
-            <h4>{{user.userName}}</h4>
+            <h4>{{userName}}</h4>
           </div>
           <div class="card-body">
             <h5 class="card-title">{{name}}</h5>
-            <h5 class="card-subtitle">{{phone}} {{email}}</h5>
+            <h5 class="card-subtitle">{{phone}}<br> {{email}}</h5>
             <p class="card-text">{{review}}</p>
             <p class="rating">{{rating}}</p>
           </div>
