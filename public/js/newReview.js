@@ -25,4 +25,4 @@ const newFormHandler = async function(event) {
     document.location.replace('/reviews-all');
   };
   
-  document.querySelector('#reviewForm').addEventListener('submit', newFormHandler);
+document.querySelector('#reviewForm').addEventListener('submit', newFormHandler);
