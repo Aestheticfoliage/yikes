@@ -5,7 +5,8 @@
         "email": "JDenver@hotmail.com",
         "phone": "999-669-6969",
         "review": "excellent guest. very understanding.",
-        "rating": "5 stars"
+        "rating": "5 stars",
+        "userId": "1"
 
     },
     {
@@ -14,8 +15,8 @@
         "email": "lgnome@hotmail.com",
         "phone": "934-462-6541",
         "review": "Got very drunk and started a bar fight.",
-        "rating": "1 stars"
-
+        "rating": "1 stars",
+        "userId": "2"
     },
     {
         "id": "3",
@@ -23,8 +24,8 @@
         "email": "dirtjones@gmail.com",
         "phone": "909-664-7154",
         "review": "He tipped $50 for a $20 meal.",
-        "rating": "5 stars"
-
+        "rating": "5 stars",
+        "userId": "1"
     },
     {
         "id": "4",
@@ -32,8 +33,8 @@
         "email": "JDenver@hotmail.com",
         "phone": "999-669-6969",
         "review": "excellent guest. very understanding.",
-        "rating": "5 stars"
-
+        "rating": "5 stars",
+        "userId": "1"
     },
     {
         "id": "5",
@@ -41,8 +42,8 @@
         "email": "krug1@hotmail.com",
         "phone": "229-365-8953",
         "review": "He broke the tv and a lamp.",
-        "rating": "0 stars"
-
+        "rating": "0 stars",
+        "userId": "2"
     },
     {
         "id": "6",
@@ -50,8 +51,8 @@
         "email": "EmmaH@yahoo.com",
         "phone": "568-663-3598",
         "review": "excellent guest and even tipped the housekeeping.",
-        "rating": "5 stars"
-
+        "rating": "5 stars",
+        "userId": "2"
     },
     {
         "id": "7",
@@ -59,8 +60,8 @@
         "email": "kjenkins@hotmail.com",
         "phone": "851-853-3602",
         "review": "Ordered over $200 in foos and did not tip waiter.",
-        "rating": "3 stars"
-
+        "rating": "3 stars",
+        "userId": "1"
     },
     {
         "id": "8",
@@ -68,7 +69,8 @@
         "email": "richardsZack@gmail.com",
         "phone": "951-602-5169",
         "review": "Dined and dashed.",
-        "rating": "0 stars"
+        "rating": "0 stars",
+        "userId": "1"
     },
     {
         "id": "9",
@@ -76,7 +78,8 @@
         "email": "richardsZack@gmail.com",
         "phone": "951-602-5169",
         "review": "Dined and dashed.",
-        "rating": "0 stars"
+        "rating": "0 stars",
+        "userId": "2"
     },
     {
         "id": "10",
@@ -84,6 +87,7 @@
         "email": "richardsZack@gmail.com",
         "phone": "951-602-5169",
         "review": "Dined and dashed.",
-        "rating": "0 stars"
+        "rating": "0 stars",
+        "userId": "2"
     }
 ]
