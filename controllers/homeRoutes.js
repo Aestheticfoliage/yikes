@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Review, User} = require('../models');
 const withAuth = require('../utils/auth');
+const {Op} = require('sequelize');
 
 router.get('/', async (req,res)=>{
   const reviewData = await Review.findAll();
@@ -42,7 +43,7 @@ router.get('/reviews/:guest', async (req, res) => {
           model: User,
         },
       ],
-      where: { name: req.params.guest },
+      where: { name: {[Op.substring]: req.params.guest} },
     });
     const reviews = reviewData.map((review) => review.get({ plain: true }));
     console.log(reviews)
