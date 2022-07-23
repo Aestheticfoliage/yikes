@@ -23,7 +23,7 @@ router.post('/new', withAuth, async (req, res) => {
   const body = req.body;
     console.log(body);
   try {
-    const newReview = await Review.create({ ...body, userId: req.session.user_id });
+    const newReview = await Review.create({ ...body, userId: req.session.userId });
 
     console.log(' New Review Posted', newReview);
 
@@ -39,7 +39,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     const reviewData = await Review.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        user_id: req.session.userId,
       },
     });
 
@@ -73,7 +73,7 @@ router.put('/', async (req, res) => {
     // Rendering the handlebar page
   //   const reviewData = await Review.findAll({include: [User]});
   // const reviews = reviewData.map(review=> review.get({plain:true}))
-  // res.render('search', { reviews, loggedIn: req.session.logged_in});
+  // res.render('search', { reviews, loggedIn: req.session.loggedIn});
   res.json(reviews)
   
   } catch (err) {

@@ -12,12 +12,12 @@ router.get('/', async (req,res)=>{
 router.get('/home', async (req,res)=>{
   const reviewData = await Review.findAll();
   const reviews = reviewData.map(review=> review.get({plain:true}))
-  res.render('homepage', {reviews})
+  res.render('homepage', {reviews, loggedIn: req.session.loggedIn})
 });
 
 // router.get('/home', (req, res) => {
 //   // If the user is already logged in, redirect the request to another route
-//   if (req.session.logged_in) {
+//   if (req.session.loggedIn) {
 //     res.redirect('/homepage');
 //     return;
 //   }
@@ -28,8 +28,8 @@ router.get('/home', async (req,res)=>{
 router.get('/reviews-all', async (req,res)=>{
   const reviewData = await Review.findAll({include: [User]});
   const reviews = reviewData.map(review => review.get({plain:true}))
-  console.log(reviews)
-  res.render('reviews-all', { reviews, loggedIn: req.session.logged_in});
+  console.log(reviews, req.session)
+  res.render('reviews-all', { reviews, loggedIn: req.session.loggedIn});
 });
 
 router.get('/reviews/:guest', async (req, res) => {
@@ -51,7 +51,7 @@ router.get('/reviews/:guest', async (req, res) => {
     // Rendering the handlebar page
   //   const reviewData = await Review.findAll({include: [User]});
   // const reviews = reviewData.map(review=> review.get({plain:true}))
-  res.render('search', { reviews, loggedIn: req.session.logged_in});
+  res.render('search', { reviews, loggedIn: req.session.loggedIn});
   // res.json(reviews)
   
   } catch (err) {
@@ -63,7 +63,7 @@ router.get('/reviews/:guest', async (req, res) => {
 router.get('/review-new', async (req,res)=>{
   const reviewNewData = await Review.findAll();
   const reviews = reviewNewData.map(review=> review.get({plain:true}))
-  res.render('review-new', { reviews, loggedIn: req.session.logged_in});
+  res.render('review-new', { reviews, loggedIn: req.session.loggedIn});
 });
 
 
@@ -71,7 +71,7 @@ router.get('/review-new', async (req,res)=>{
 router.get('/user', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.userId, {
       attributes: { exclude: ['password'] },
       include: [{ model: Review }],
     });
@@ -89,7 +89,7 @@ router.get('/user', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/reviews-all');
     return;
   }
@@ -107,7 +107,7 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).redirect("/");
     });

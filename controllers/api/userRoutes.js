@@ -6,8 +6,8 @@ const { User } = require('../../models');
 //     const userData = await User.create(req.body);
 //     console.log(userData + "USERDATAHERE");
 //     req.session.save(() => {
-//       req.session.user_id = userData.id;
-//       req.session.logged_in = true;
+//       req.session.userId = userData.id;
+//       req.session.loggedIn = true;
 //       res.status(200).json(userData);
 //     });
 //     console.log(userData);
@@ -59,7 +59,7 @@ router.post('/signIn', async (req, res) => {
     }
 
     const validPassword = userData.checkPassword(req.body.password);
-
+    console.log(validPassword);
     if (!validPassword) {
       res
         .status(400)
@@ -68,9 +68,9 @@ router.post('/signIn', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.userId = userData.id;
       req.session.userName = userData.userName;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
 
       res.json({ user: userData, message: 'You are now logged in!' });
       console.log("You are now logged in!")
@@ -81,7 +81,7 @@ router.post('/signIn', async (req, res) => {
 });
 
 // router.post('/logout', (req, res) => {
-//   if (req.session.logged_in) {
+//   if (req.session.loggedIn) {
 //     req.session.destroy(() => {
 //       res.status(204).end();
 //     });
